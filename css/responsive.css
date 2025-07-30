@@ -172,3 +172,111 @@ a:hover {
         background-color: #cb0ed8; /* Une autre couleur pour le bouton sur desktop */
     }
 }  
+
+/* ==================================== */
+/* 2.5. Page d'Accueil (index.html)     */
+/* ==================================== */
+
+/* Styles pour le conteneur principal de la page d'accueil */
+.main-content-home {
+    display: flex; /* Utilise Flexbox pour organiser les sections */
+    flex-direction: column; /* Par défaut, les sections s'empilent verticalement sur mobile */
+    gap: 2rem; /* Espacement entre les sections */
+    padding: 2rem 1.5rem; /* Rembourrage interne pour le contenu */
+}
+
+/* Styles pour chaque bloc de catégorie */
+.category-section {
+    background-color: #f0f0f0; /* Un fond légèrement différent pour chaque section */
+    padding: 1.5rem;
+    border-radius: 8px; /* Bords légèrement arrondis */
+    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.05); /* Ombre très légère */
+}
+
+.category-section h2 {
+    font-size: 2.2rem; /* Taille du titre de catégorie pour mobile */
+    margin-bottom: 1rem;
+    color: #35014d; /* Votre couleur violet foncé */
+    border-bottom: 2px solid #a341d0; /* Bordure sous le titre */
+    padding-bottom: 0.5rem;
+    display: inline-block; /* Pour que la bordure ne prenne que la largeur du texte */
+}
+
+.category-section h2 a {
+    color: #35014d; /* La même couleur que le titre, pour un aspect uniforme */
+    text-decoration: none; /* Pas de soulignement par défaut */
+}
+
+.category-section h2 a:hover {
+    color: #cb0ed8; /* Couleur plus vive au survol */
+    text-decoration: underline;
+}
+
+.category-list {
+    list-style: none; /* Supprime les puces par défaut */
+    padding: 0;
+    display: flex; /* Utilise Flexbox pour les éléments de liste */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si pas assez de place */
+    gap: 0.8rem 1.5rem; /* Espacement entre les éléments de liste */
+}
+
+.category-list li a {
+    font-size: 1.6rem;
+    color: #794492; /* Votre couleur violet plus clair pour les liens de catégorie */
+    text-decoration: none;
+    padding: 0.5rem 0;
+    display: block; /* Pour qu'ils prennent toute la largeur de leur zone */
+}
+
+.category-list li a:hover {
+    color: #cb0ed8; /* Couleur plus vive au survol */
+    text-decoration: underline;
+}
+
+/* ==================================== */
+/* Media Queries pour la Page d'Accueil */
+/* ==================================== */
+
+/* Breakpoint 618px: Centrer le conteneur, peut-être avec une max-width */
+@media (min-width: 618px) {
+    .craigslist-container {
+        max-width: 600px; /* Exemple de largeur maximale pour cette taille */
+        margin: 0 auto; /* Centre le conteneur */
+        padding: 2rem; /* Plus de padding pour les écrans plus grands */
+    }
+
+    .main-content-home {
+        padding: 3rem 2rem; /* Plus d'espacement pour le contenu principal */
+    }
+
+    .category-section h2 {
+        font-size: 2.5rem; /* Augmenter la taille du titre */
+    }
+
+    .category-list li a {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* Breakpoint 768px: Passer à une disposition en deux ou trois colonnes */
+@media (min-width: 768px) {
+    .craigslist-container {
+        max-width: 960px; /* Largeur classique pour desktop, ou 1000px selon le besoin */
+        padding: 3rem; /* Plus de padding général */
+    }
+
+    .main-content-home {
+        display: grid; /* Utilise CSS Grid pour un contrôle précis des colonnes */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2 ou 3 colonnes auto-adaptatives */
+        gap: 3rem; /* Espacement plus grand entre les colonnes */
+    }
+
+    .category-section h2 {
+        font-size: 2.8rem; /* Taille du titre de catégorie pour desktop */
+    }
+
+    .category-list li a {
+        font-size: 1.8rem;
+    }
+}  
