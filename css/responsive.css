@@ -491,3 +491,224 @@ a:hover {
         max-width: 300px; /* Limite la largeur de la barre de recherche */
     }
 }  
+
+/* ==================================== */
+/* 2.7. Page de Détail (detail.html)    */
+/* ==================================== */
+
+/* Styles pour le conteneur principal de la page de détail */
+.main-content-detail {
+    padding: 2rem 1.5rem; /* Rembourrage interne */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espacement entre les sections */
+    background-color: #fff; /* Fond blanc pour le contenu de la page */
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+}
+
+/* Section Header de l'annonce (titre et méta) */
+.ad-header {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.ad-detail-title {
+    font-size: 2.8rem; /* Grande taille pour le titre de l'annonce sur mobile */
+    color: #35014d;
+    margin-bottom: 0.5rem;
+}
+
+.ad-detail-meta {
+    font-size: 1.5rem;
+    color: #794492;
+}
+
+.ad-detail-meta span {
+    font-weight: 500;
+}
+
+/* Section Média (image principale) */
+.ad-media {
+    margin-bottom: 2rem;
+    text-align: center; /* Centrer l'image si elle est plus petite que le conteneur */
+}
+
+.ad-main-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+/* Styles pour les titres de section (Description, Détails, Contact) */
+.section-title {
+    font-size: 2rem;
+    color: #35014d;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #a341d0;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Section grille des détails (description et info box) */
+.ad-details-grid {
+    display: flex;
+    flex-direction: column; /* S'empile sur mobile */
+    gap: 2rem;
+}
+
+/* Description de l'annonce */
+.ad-description p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+/* Boîte d'informations de l'annonce (aside) */
+.ad-info-box {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.ad-info-box p {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+}
+
+.ad-info-box p span {
+    font-weight: bold;
+    color: #35014d;
+}
+
+.ad-detail-price span {
+    color: #cb0ed8; /* Couleur vive pour le prix */
+    font-size: 1.8rem;
+}
+
+/* Section Contact */
+.ad-contact-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.contact-info-block p {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+}
+
+.contact-info-block p span,
+.contact-info-block p a {
+    font-weight: bold;
+    color: #35014d;
+    text-decoration: none;
+}
+
+.contact-info-block p a:hover {
+    color: #a341d0;
+    text-decoration: underline;
+}
+
+.message-seller-btn {
+    display: block; /* Prend toute la largeur sur mobile */
+    width: 100%;
+    padding: 1.2rem;
+    background-color: #a341d0; /* Votre couleur d'accentuation */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.message-seller-btn:hover {
+    background-color: #cb0ed8;
+}
+
+/* Bouton de retour à la liste */
+.back-to-list {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed #eee;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #794492; /* Votre couleur violet plus clair */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #35014d;
+}
+
+
+/* ==================================== */
+/* Media Queries pour la Page de Détail */
+/* ==================================== */
+
+/* Breakpoint 618px: Ajustements pour une meilleure lisibilité */
+@media (min-width: 618px) {
+    .ad-detail-title {
+        font-size: 3.2rem;
+    }
+
+    .ad-detail-meta {
+        font-size: 1.6rem;
+    }
+
+    .ad-main-image img {
+        max-width: 80%; /* L'image peut être un peu plus petite que 100% sur tablette */
+    }
+
+    .message-seller-btn {
+        width: auto; /* Le bouton ne prend plus toute la largeur */
+        margin-left: auto; /* Aligner à droite si flex */
+        margin-right: auto; /* Ou centrer si block */
+    }
+}
+
+/* Breakpoint 768px: Mettre la description et les détails côte à côte */
+@media (min-width: 768px) {
+    .main-content-detail {
+        padding: 3rem;
+    }
+
+    .ad-detail-title {
+        font-size: 3.8rem;
+    }
+
+    .ad-details-grid {
+        flex-direction: row; /* La description et la boîte d'info côte à côte */
+        align-items: flex-start; /* Aligne le haut des deux blocs */
+        gap: 3rem;
+    }
+
+    .ad-description {
+        flex: 2; /* La description prend plus d'espace */
+    }
+
+    .ad-info-box {
+        flex: 1; /* La boîte d'info prend moins d'espace */
+        min-width: 280px; /* Largeur minimale pour la boîte d'info */
+    }
+
+    .message-seller-btn {
+        margin-left: 0; /* Alignement par défaut à gauche du conteneur parent */
+        max-width: 300px; /* Limite la largeur du bouton */
+    }
+} 
