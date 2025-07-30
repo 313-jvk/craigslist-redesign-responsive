@@ -20,8 +20,11 @@ html {
 body {
     font-family: 'Poppins', sans-serif; /* Votre police choisie */
     line-height: 1.6; /* Améliore la lisibilité du texte */
-    color: #35014d; /* Votre couleur violet foncé pour le texte principal */
-    background-color: #F8F8F8; /* Un fond neutre et clair */
+    color: #F8F8F8; 
+    background-image: url('../css/vi.jfif'); 
+    background-size: cover;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
     -webkit-font-smoothing: antialiased; /* Pour un rendu de police plus lisse */
     -moz-osx-font-smoothing: grayscale; /* Pour un rendu de police plus lisse */
 }
@@ -61,8 +64,13 @@ a:hover {
 .craigslist-container {
     width: 100%; /* Le conteneur occupe toute la largeur sur mobile */
     padding: 1.5rem; /* Espacement interne pour le contenu */
-    background-color: #fff; /* Fond blanc pour le conteneur */
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05); /* Ombre douce */
+     /* Fond blanc pour le conteneur */
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05); /* Ombre douce */ 
+    background-image: url('../css/violet.jfif'); 
+    background-size: cover;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    box-shadow: 0 0 3rem rgba(197, 146, 199, 0.646);
 } 
 
 /* ==================================== */
@@ -187,28 +195,34 @@ a:hover {
 
 /* Styles pour chaque bloc de catégorie */
 .category-section {
-    background-color: #f0f0f0; /* Un fond légèrement différent pour chaque section */
+    color: #f0f0f0; /* Un fond légèrement différent pour chaque section */
     padding: 1.5rem;
     border-radius: 8px; /* Bords légèrement arrondis */
-    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.05); /* Ombre très légère */
+    box-shadow: 0 0.1rem 0.3rem rgba(232, 168, 245, 0.632); /* Ombre très légère */ 
+    background-color: #4708647e;
+} 
+
+.category-section:hover { 
+    border: 2px solid #a341d0; 
+    box-shadow: 0 0.1rem 1.5rem rgba(232, 168, 245, 0.632);
 }
 
 .category-section h2 {
     font-size: 2.2rem; /* Taille du titre de catégorie pour mobile */
     margin-bottom: 1rem;
-    color: #35014d; /* Votre couleur violet foncé */
+    color: white; /* Votre couleur violet foncé */
     border-bottom: 2px solid #a341d0; /* Bordure sous le titre */
     padding-bottom: 0.5rem;
     display: inline-block; /* Pour que la bordure ne prenne que la largeur du texte */
 }
 
 .category-section h2 a {
-    color: #35014d; /* La même couleur que le titre, pour un aspect uniforme */
+    color: white; /* La même couleur que le titre, pour un aspect uniforme */
     text-decoration: none; /* Pas de soulignement par défaut */
 }
 
 .category-section h2 a:hover {
-    color: #cb0ed8; /* Couleur plus vive au survol */
+    color: #fdfff1; /* Couleur plus vive au survol */
     text-decoration: underline;
 }
 
@@ -222,14 +236,14 @@ a:hover {
 
 .category-list li a {
     font-size: 1.6rem;
-    color: #794492; /* Votre couleur violet plus clair pour les liens de catégorie */
+    color: #ffffff; /* Votre couleur violet plus clair pour les liens de catégorie */
     text-decoration: none;
     padding: 0.5rem 0;
     display: block; /* Pour qu'ils prennent toute la largeur de leur zone */
 }
 
 .category-list li a:hover {
-    color: #cb0ed8; /* Couleur plus vive au survol */
+    color: #fbffe6; /* Couleur plus vive au survol */
     text-decoration: underline;
 }
 
@@ -769,7 +783,7 @@ a:hover {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { 
     .main-footer {
         padding: 3rem;
     }
