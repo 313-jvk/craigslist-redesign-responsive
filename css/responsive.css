@@ -39,7 +39,7 @@ img {
 /* 2.2.5. Styles des titres et paragraphes pour mobile */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif; /* Garder la même police pour les titres */
-    color: #35014d; /* Couleur des titres, peut-être la même que le texte principal ou légèrement différente */
+    color: #ffffff; /* Couleur des titres, peut-être la même que le texte principal ou légèrement différente */
     margin-bottom: 1rem; /* Espacement sous les titres */
 }
 
@@ -106,21 +106,39 @@ a:hover {
     cursor: pointer;
     display: block; /* Visible sur mobile */
     z-index: 1001; /* Pour être au-dessus du menu */
+} 
+
+.footer-legacy { 
+    color: #F8F8F8; /* Texte clair sur fond foncé */
+    padding: 2rem 3rem;
+    text-align: center;
+    margin-top: 3rem; 
+    background-color: #35014d; 
+} 
+
+.footer-legacy a {
+    color: #F8F8F8;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
 }
 
+.footer-legacy a:hover {
+    color: #d5bed7; /* Couleur d'accentuation au survol */
+}
+
+
 .main-nav {
-    /* Sur mobile, le menu est caché et s'affiche en colonne */
     position: absolute; /* Ou fixed, si vous voulez qu'il couvre tout l'écran */
     top: 100%; /* Juste en dessous du header */
-    left: 0;
+    right: 0;
     width: 100%;
     background-color: #35014d; /* Même fond que le header */
     border-top: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    box-shadow: 0 0.5rem 1rem rgba(244, 190, 250, 0.676);
     display: none; /* CACHÉ par défaut sur mobile */
-    flex-direction: column; /* Les liens s'empilent verticalement */
-    padding: 1rem 0;
-    z-index: 1000; /* Assure qu'il est au-dessus du contenu */
+    flex-direction: column; /* Les liens s'empilent verticalement */ 
+    z-index: 1000; /* Assure qu'il est au-dessus du contenu */ 
 }
 
 .main-nav.active { /* Cette classe sera ajoutée/retirée par JavaScript */
@@ -128,34 +146,40 @@ a:hover {
 }
 
 .main-nav a {
-    color: #F8F8F8; /* Couleur claire pour les liens du menu */
-    font-size: 1.8rem;
-    padding: 1.2rem 1.5rem; /* Espacement pour chaque lien */
-    display: block; /* Chaque lien prend toute la largeur */
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.05); /* Ligne de séparation subtile */
-}
+    color: #F8F8F8; /* Couleur claire pour les liens du menu */ 
+    font-size: 1.4rem; 
+    display: block; /* Chaque lien prend toute la largeur */ 
+    border-bottom: 1px solid rgba(255,255,255,0.05); /* Ligne de séparation subtile */ 
+    padding-top: 10px;
+} 
+
+.main-nav a.btn-post-ad {  
+    background-color: wheat; /* Votre couleur d'accentuation */
+    color: #fff;
+    border-radius: 5px; 
+    font-weight: 500; 
+    margin: 0.3rem .6rem; /* Marge pour le bouton */
+    padding: 1rem 1.5rem; 
+} 
 
 .main-nav a:last-child {
     border-bottom: none; /* Pas de bordure pour le dernier élément */
 }
 
-.main-nav a:hover,
-.main-nav a.btn-post-ad { /* Styling spécifique pour le bouton "Poster Annonce" */
+.main-nav a:hover { /* Styling spécifique pour le bouton "Poster Annonce" */
     background-color: #a341d0; /* Votre couleur d'accentuation */
     color: #fff;
     border-radius: 5px;
-    margin: 0.8rem 1.5rem; /* Marge pour le bouton */
-    padding: 1.2rem 2rem;
-    text-align: center;
-    font-weight: 500;
+    margin: 0.3rem .4rem; /* Marge pour le bouton */
+    padding: 1rem 1.3rem; 
+    font-weight: 400;
 }
 
 /* Par défaut, sur mobile, nous cachons le menu-icon et affichons la nav complète */
 /* Ceci sera inversé par les media queries pour les grands écrans */
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     #menu-icon {
-        display: none; /* Cache l'icône du menu sur les écrans plus grands */
+        display: none; 
     }
 
     .main-nav {
@@ -168,16 +192,17 @@ a:hover {
         padding: 0;
     }
 
-    .main-nav a {
-        padding: 0.5rem 1.2rem; /* Espacement plus compact pour desktop */
+    .main-nav a { 
+        padding-right: -20px;
+        padding-left: 30px; 
         border-bottom: none;
         color: #F8F8F8; /* Toujours blanc pour les liens */
     }
 
-    .main-nav a.btn-post-ad {
-        margin: 0; /* Pas de marge spécifique */
-        padding: 0.8rem 1.5rem;
-        background-color: #cb0ed8; /* Une autre couleur pour le bouton sur desktop */
+    .main-nav a.btn-post-ad { 
+        margin-left: 60px; 
+        background-color: #cb0ed8; /* Une autre couleur pour le bouton sur desktop */ 
+        text-align: center; 
     }
 }  
 
@@ -488,7 +513,7 @@ a:hover {
         order: unset; /* Retire l'ordre spécifique pour mobile */
         margin-left: 1.5rem;
         flex-shrink: 0;
-    }
+    } 
 }
 
 /* Breakpoint 768px: Ajustements pour desktop */
@@ -754,7 +779,7 @@ a:hover {
 }
 
 .footer-links a:hover {
-    color: #cb0ed8; /* Couleur d'accentuation au survol */
+    color: #d5bed7; /* Couleur d'accentuation au survol */
 }
 
 .footer-links .separator {
