@@ -40,15 +40,15 @@ Le projet met l'accent sur les principes de **Mobile-First Design** et l'ajout d
 3.  **Ouvrir les fichiers HTML :**
     Ouvrez simplement `index.html`, `list.html`, ou `detail.html` dans votre navigateur web préféré. Aucune installation de serveur n'est requise car il s'agit d'un projet purement Front-End.
 
-Découvrez la transformation ! Voici un aperçu avant/après de la refonte de l'interface utilisateur de Craigslist. 
+Découvrez la transformation ! Voici un aperçu avant/après de la refonte de l'interface utilisateur de Craigslist. Avant : 
 
-Avant : 
-        <img width="585" height="382" alt="depott" src="https://github.com/user-attachments/assets/bad2912f-12e6-4cd0-a67c-099ee4ccb704" /> 
 
+   <img width="600" height="440" alt="depott" src="https://github.com/user-attachments/assets/bad2912f-12e6-4cd0-a67c-099ee4ccb704" /> 
+_______________________________________________________________________________________________________________________________________________________________________
 Apres : 
-        <img width="827" height="446" alt="depot" src="https://github.com/user-attachments/assets/a0d41c3d-d12f-4488-a4a2-d202b30f88e0" /> 
-        <img width="745" height="450" alt="depottt" src="https://github.com/user-attachments/assets/b3d25212-9cbb-4f6c-8b43-3d718c4463b4" /> 
-        <img width="490" height="404" alt="depotttt" src="https://github.com/user-attachments/assets/7977efee-1561-44e1-9a9d-65642ab92eff" />
+        <img width="600" height="440" alt="depot" src="https://github.com/user-attachments/assets/a0d41c3d-d12f-4488-a4a2-d202b30f88e0" /> 
+        <img width="600" height="440" alt="depottt" src="https://github.com/user-attachments/assets/b3d25212-9cbb-4f6c-8b43-3d718c4463b4" /> 
+        <img width="600" height="440" alt="depotttt" src="https://github.com/user-attachments/assets/7977efee-1561-44e1-9a9d-65642ab92eff" />
 
 
 
