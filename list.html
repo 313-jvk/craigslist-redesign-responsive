@@ -26,21 +26,70 @@
     </nav>
 </header> 
 
-        <div class="search-bar-legacy">
-            Rechercher : <input type="text" placeholder="mots-clés"> <button>Go</button>
-        </div>
+       <main class="main-content-list">
+    <section class="search-filter-bar">
+        <input type="text" placeholder="Rechercher des annonces..." class="search-input">
+        <button class="search-button">Rechercher</button>
+        <select class="filter-select">
+            <option value="">Trier par...</option>
+            <option value="date-desc">Plus récent</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+        </select>
+    </section>
 
-        <div class="ads-list-legacy">
-            <ul>
-                <li><span class="date">Juil 29</span> <a href="detail.html">Belle table basse en bois</a> <span class="location">(Bab Ezzouar)</span></li>
-                <li><span class="date">Juil 29</span> <a href="detail.html">VTT peu utilisé à vendre</a> <span class="location">(Hydra)</span></li>
-                <li><span class="date">Juil 28</span> <a href="detail.html">Canapé 3 places en bon état</a> <span class="location">(Cheraga)</span></li>
-                <li><span class="date">Juil 28</span> <a href="detail.html">Ancien service à thé en porcelaine</a> <span class="location">(El Mouradia)</span></li>
-                <li><span class="date">Juil 27</span> <a href="detail.html">Lot de livres d'occasion</a> <span class="location">(Didouche Mourad)</span></li>
-                <li><span class="date">Juil 27</span> <a href="detail.html">Chaise de bureau ergonomique</a> <span class="location">(Ben Aknoun)</span></li>
-                <li><span class="date">Juil 26</span> <a href="detail.html">Mini-réfrigérateur compact</a> <span class="location">(Draria)</span></li>
-            </ul>
-        </div>
+    <section class="ad-listing-section">
+        <ul class="ad-list">
+            <li class="ad-item">
+                <span class="ad-date">Juil 29</span>
+                <a href="detail.html" class="ad-title">Belle table basse en bois</a>
+                <span class="ad-location">(Bab Ezzouar)</span>
+                <span class="ad-price">15 000 DZD</span> </li>
+            <li class="ad-item">
+                <span class="ad-date">Juil 29</span>
+                <a href="detail.html" class="ad-title">VTT peu utilisé à vendre</a>
+                <span class="ad-location">(Hydra)</span>
+                <span class="ad-price">25 000 DZD</span>
+            </li>
+            <li class="ad-item">
+                <span class="ad-date">Juil 28</span>
+                <a href="detail.html" class="ad-title">Canapé 3 places en bon état</a>
+                <span class="ad-location">(Cheraga)</span>
+                <span class="ad-price">40 000 DZD</span>
+            </li>
+            <li class="ad-item">
+                <span class="ad-date">Juil 28</span>
+                <a href="detail.html" class="ad-title">Ancien service à thé en porcelaine</a>
+                <span class="ad-location">(El Mouradia)</span>
+                <span class="ad-price">8 000 DZD</span>
+            </li>
+            <li class="ad-item">
+                <span class="ad-date">Juil 27</span>
+                <a href="detail.html" class="ad-title">Lot de livres d'occasion</a>
+                <span class="ad-location">(Didouche Mourad)</span>
+                <span class="ad-price">3 000 DZD</span>
+            </li>
+            <li class="ad-item">
+                <span class="ad-date">Juil 27</span>
+                <a href="detail.html" class="ad-title">Chaise de bureau ergonomique</a>
+                <span class="ad-location">(Ben Aknoun)</span>
+                <span class="ad-price">12 000 DZD</span>
+            </li>
+            <li class="ad-item">
+                <span class="ad-date">Juil 26</span>
+                <a href="detail.html" class="ad-title">Mini-réfrigérateur compact</a>
+                <span class="ad-location">(Draria)</span>
+                <span class="ad-price">18 000 DZD</span>
+            </li>
+        </ul>
+    </section>
+
+    <div class="pagination-list">
+        <a href="#" class="pagination-btn disabled">&lt; Précédent</a>
+        <span class="page-info">1 sur 10</span>
+        <a href="#" class="pagination-btn">Suivant &gt;</a>
+    </div>
+</main>  
 
         <div class="footer-legacy">
             <a href="#">&lt; précédent</a> | <a href="#">suivant &gt;</a> | <a href="index.html">retour à l'accueil</a>

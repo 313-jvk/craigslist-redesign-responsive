@@ -279,4 +279,215 @@ a:hover {
     .category-list li a {
         font-size: 1.8rem;
     }
+} 
+
+/* ==================================== */
+/* 2.6. Page de Liste (list.html)       */
+/* ==================================== */
+
+/* Styles pour le conteneur principal de la page de liste */
+.main-content-list {
+    padding: 2rem 1.5rem; /* Rembourrage interne */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espacement entre la barre de recherche, la liste et la pagination */
+}
+
+/* Styles pour la barre de recherche et de filtres */
+.search-filter-bar {
+    display: flex;
+    flex-direction: column; /* Par défaut, les éléments s'empilent verticalement sur mobile */
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #f0f0f0; /* Fond clair pour la barre */
+    border-radius: 8px;
+    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.05);
+}
+
+.search-filter-bar input,
+.search-filter-bar button,
+.search-filter-bar select {
+    padding: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    width: 100%; /* Occupe toute la largeur sur mobile */
+}
+
+.search-filter-bar button {
+    background-color: #a341d0; /* Votre couleur d'accentuation */
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.search-filter-bar button:hover {
+    background-color: #cb0ed8; /* Une couleur un peu plus vive au survol */
+}
+
+/* Styles pour la liste des annonces */
+.ad-listing-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+    padding: 1rem 0; /* Espacement interne */
+}
+
+.ad-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ad-item {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur mobile */
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee; /* Séparateur d'annonces */
+    gap: 0.5rem 1rem; /* Espacement entre les éléments de l'annonce */
+}
+
+.ad-item:last-child {
+    border-bottom: none; /* Pas de bordure pour le dernier élément */
+}
+
+.ad-date {
+    font-size: 1.4rem;
+    color: #794492; /* Votre violet clair pour la date */
+    flex-basis: 70px; /* Base pour la date */
+    flex-shrink: 0; /* Évite qu'elle ne se réduise trop */
+}
+
+.ad-title {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #35014d; /* Votre violet foncé pour le titre de l'annonce */
+    flex-grow: 1; /* Le titre prend l'espace restant */
+    text-decoration: none;
+    order: 2; /* Ordre visuel après la date et potentiellement le prix sur mobile */
+}
+
+.ad-title:hover {
+    color: #a341d0; /* Couleur d'accentuation au survol */
+    text-decoration: underline;
+}
+
+.ad-location {
+    font-size: 1.4rem;
+    color: #794492;
+    order: 3; /* Ordre visuel */
+    flex-basis: 100%; /* Prend une nouvelle ligne sur mobile */
+    text-align: right;
+}
+
+.ad-price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #cb0ed8; /* Votre couleur vive pour le prix */
+    order: 1; /* Ordre visuel pour le prix (peut apparaître avant le titre sur mobile) */
+}
+
+
+/* Styles pour la pagination */
+.pagination-list {
+    display: flex;
+    justify-content: center; /* Centre la pagination */
+    gap: 1.5rem;
+    padding: 1rem 0;
+    font-size: 1.6rem;
+}
+
+.pagination-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #a341d0; /* Couleur d'accentuation pour les boutons */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-btn:hover:not(.disabled) {
+    background-color: #cb0ed8;
+}
+
+.pagination-btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.page-info {
+    display: flex;
+    align-items: center; /* Centre le texte d'info de page */
+    color: #35014d;
+}
+
+/* ==================================== */
+/* Media Queries pour la Page de Liste  */
+/* ==================================== */
+
+/* Breakpoint 618px: Ajustements pour la barre de recherche et les éléments de liste */
+@media (min-width: 618px) {
+    .search-filter-bar {
+        flex-direction: row; /* Les éléments de recherche côte à côte */
+        flex-wrap: wrap; /* Permet un retour à la ligne si nécessaire */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .search-filter-bar input,
+    .search-filter-bar select {
+        flex: 1; /* Prend l'espace disponible */
+        min-width: 150px; /* Largeur minimale pour éviter le rétrécissement excessif */
+    }
+
+    .search-filter-bar button {
+        width: auto; /* La largeur s'adapte au contenu */
+        flex-shrink: 0; /* Évite que le bouton ne se rétrécisse */
+    }
+
+    .ad-item {
+        /* Sur tablette, on peut mieux aligner les éléments de l'annonce */
+        flex-wrap: nowrap; /* Les éléments restent sur une seule ligne */
+        justify-content: space-between; /* Espacement entre date, titre, prix, etc. */
+    }
+
+    .ad-date {
+        flex-basis: auto; /* Ne prend plus une base fixe */
+        margin-right: 1.5rem;
+    }
+
+    .ad-title {
+        order: unset; /* Retire l'ordre spécifique pour mobile */
+        flex-grow: 1; /* Prend l'espace restant */
+    }
+
+    .ad-location {
+        flex-basis: auto; /* Ne prend plus une nouvelle ligne */
+        text-align: left; /* Réinitialise l'alignement */
+        margin-left: 1.5rem;
+        flex-shrink: 0; /* Empêche le rétrécissement excessif */
+    }
+
+    .ad-price {
+        order: unset; /* Retire l'ordre spécifique pour mobile */
+        margin-left: 1.5rem;
+        flex-shrink: 0;
+    }
+}
+
+/* Breakpoint 768px: Ajustements pour desktop */
+@media (min-width: 768px) {
+    .main-content-list {
+        padding: 3rem;
+    }
+
+    .search-filter-bar {
+        gap: 1.5rem;
+    }
+
+    .search-filter-bar input {
+        max-width: 300px; /* Limite la largeur de la barre de recherche */
+    }
 }  
