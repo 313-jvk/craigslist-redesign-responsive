@@ -712,3 +712,70 @@ a:hover {
         max-width: 300px; /* Limite la largeur du bouton */
     }
 } 
+
+/* ==================================== */
+/* 2.8. Footer                          */
+/* ==================================== */
+
+.main-footer {
+    background-color: #35014d; /* Votre couleur violet foncé, cohérente avec le header */
+    color: #F8F8F8; /* Texte clair sur fond foncé */
+    padding: 2rem 1.5rem;
+    text-align: center;
+    margin-top: 3rem; /* Espacement avec le contenu au-dessus */
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column; /* Liens empilés sur mobile */
+    gap: 0.8rem; /* Espacement entre les liens */
+    margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+    color: #F8F8F8;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #cb0ed8; /* Couleur d'accentuation au survol */
+}
+
+.footer-links .separator {
+    display: none; /* Cache les séparateurs sur mobile pour un agencement vertical */
+}
+
+.footer-copyright {
+    font-size: 1.4rem;
+    color: rgba(248, 248, 248, 0.7); /* Texte légèrement estompé */
+}
+
+/* Media Query pour les écrans plus grands (tablette et desktop) */
+@media (min-width: 618px) {
+    .main-footer {
+        padding: 2.5rem 2rem;
+    }
+
+    .footer-links {
+        flex-direction: row; /* Liens côte à côte sur les écrans plus grands */
+        justify-content: center; /* Centre les liens */
+        gap: 1.5rem; /* Plus d'espacement */
+    }
+
+    .footer-links .separator {
+        display: inline; /* Affiche les séparateurs sur les grands écrans */
+    }
+}
+
+@media (min-width: 768px) {
+    .main-footer {
+        padding: 3rem;
+    }
+
+    .footer-links {
+        gap: 2rem; /* Encore plus d'espacement */
+    }
+} 
+
