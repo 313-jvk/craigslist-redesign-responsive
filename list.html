@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Craigslist Alger - Ventes (Simulé)</title>
-    <link rel="stylesheet" href="style-legacy.css">
+    <link rel="stylesheet" href="css/style-legacy.css">
+    <link rel="stylesheet" href="css/responsive.css"> 
 </head>
 <body>
     <div class="craigslist-container">
-        <div class="header-legacy">
-            <h1><a href="index.html">Alger</a> &gt; Ventes</h1>
-            <a href="#" class="post-link">poster une annonce</a>
-        </div>
+        
+
+        <header class="main-header">
+    <a href="index.html" class="logo-site">Craigslist <span class="city-name">Alger</span></a>
+
+    <i class='bx bx-menu' id="menu-icon"></i>
+
+    <nav class="main-nav">
+        <a href="list.html?category=for-sale">À Vendre</a>
+        <a href="list.html?category=housing">Logement</a>
+        <a href="list.html?category=jobs">Emplois</a>
+        <a href="#">Communauté</a>
+        <a href="#">Services</a>
+        <a href="#" class="btn-post-ad">Poster Annonce</a>
+    </nav>
+</header> 
 
         <div class="search-bar-legacy">
             Rechercher : <input type="text" placeholder="mots-clés"> <button>Go</button>
