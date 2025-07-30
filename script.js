@@ -106,3 +106,96 @@ document.addEventListener('DOMContentLoaded', () => {
 // et appeler `performFilteringAndSorting` avec un pré-filtre au chargement de list.html.
 // Nous pouvons le faire si vous le souhaitez après cette tâche. 
 
+// ====================================
+// 3.2. "Voir Plus" / Pagination Dynamique (list.html)
+// ====================================
+
+// Référence au bouton "Voir plus"
+const loadMoreBtn = document.querySelector('#load-more-btn');
+
+// Variable pour gérer les annonces actuellement affichées et le nombre à afficher
+const adsPerPage = 5; // Nombre d'annonces à afficher par "page" ou chargement
+let currentDisplayedAds = adsPerPage; // Commence avec le nombre d'annonces déjà visibles par défaut
+
+// Fonction pour afficher plus d'annonces
+function displayMoreAds() {
+    // Si allAdItems n'est pas encore défini (par exemple, si on arrive directement sur list.html)
+    // On s'assure qu'il est peuplé
+    if (allAdItems.length === 0 && adListContainer) {
+        allAdItems = Array.from(adListContainer.children);
+    }
+
+    // Cache toutes les annonces initialement
+    allAdItems.forEach(ad => ad.style.display = 'none');
+
+    // Affiche les annonces jusqu'à currentDisplayedAds
+    for (let i = 0; i < currentDisplayedAds && i < allAdItems.length; i++) {
+        allAdItems[i].style.display = 'flex'; // Ou 'block' ou autre selon votre display par défaut pour .ad-item
+    }
+
+    // Cache le bouton "Voir plus" s'il n'y a plus d'annonces à afficher
+    if (currentDisplayedAds >= allAdItems.length && loadMoreBtn) {
+        loadMoreBtn.style.display = 'none';
+    } else if (loadMoreBtn) {
+        loadMoreBtn.style.display = 'block'; // S'assurer qu'il est visible si des annonces restent
+    }
+}
+
+// Gère le clic sur le bouton "Voir plus"
+if (loadMoreBtn) { // S'assure que le bouton existe avant d'ajouter l'écouteur
+    loadMoreBtn.addEventListener('click', () => {
+        currentDisplayedAds += adsPerPage; // Incrémente le nombre d'annonces à afficher
+        performFilteringAndSorting(); // Applique le filtre/tri et le nouvel affichage
+    });
+}
+
+// Surcharge la fonction performFilteringAndSorting existante pour inclure l'affichage limité
+// C'est important car le filtrage et le tri doivent aussi respecter la pagination
+const originalPerformFilteringAndSorting = window.performFilteringAndSorting; // Sauvegarde la référence originale
+
+window.performFilteringAndSorting = function() {
+    originalPerformFilteringAndSorting(); // Appelle la logique de filtrage et de tri existante
+
+    // Après le filtrage/tri, on applique la logique de pagination
+    // Il faut que allAdItems contienne les éléments DOM dans leur état actuel (après filtrage/tri)
+    // Pour cela, on va remodifier légèrement performFilteringAndSorting pour qu'elle renvoie la liste filtrée et triée, ou qu'elle mette à jour une variable globale.
+    // Plus simple : on prend directement les enfants actuels du conteneur après le tri.
+
+    const currentlyVisibleAds = Array.from(adListContainer.children); // Prend les éléments DOM actuellement dans le conteneur
+
+    // Cache tous les éléments, puis affiche seulement les X premiers
+    currentlyVisibleAds.forEach(ad => ad.style.display = 'none');
+    for (let i = 0; i < currentDisplayedAds && i < currentlyVisibleAds.length; i++) {
+        currentlyVisibleAds[i].style.display = 'flex'; // ou 'block'
+    }
+
+    // Cache/montre le bouton Voir plus en fonction du nombre d'annonces actuellement disponibles
+    if (loadMoreBtn) {
+        if (currentDisplayedAds >= currentlyVisibleAds.length) {
+            loadMoreBtn.style.display = 'none';
+        } else {
+            loadMoreBtn.style.display = 'block';
+        }
+    }
+};
+
+
+// Initialisation pour la pagination au chargement de la page (si la page est list.html)
+document.addEventListener('DOMContentLoaded', () => {
+    if (adListContainer) {
+        // La ligne suivante doit être la première exécution après avoir peuplé allAdItems
+        // Donc, assurez-vous que `allAdItems` est peuplé AVANT cet appel.
+        // C'est déjà géré dans la section 3.1 `DOMContentLoaded`.
+        
+        // Initialise l'affichage avec seulement les premières annonces
+        // et ajuste la visibilité du bouton "Voir plus"
+        window.performFilteringAndSorting(); // Appelle la version surchargée
+    }
+});
+
+
+// Note importante : La logique de `performFilteringAndSorting` que nous avons écrite précédemment
+// vide et repeuple `adListContainer`. Pour que la pagination fonctionne bien avec,
+// il faut s'assurer que `currentDisplayedAds` soit bien pris en compte APRES le tri.
+// La surcharge ci-dessus gère cela en ré-appliquant la limite après le tri. 
+
