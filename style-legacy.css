@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Un fond légèrement gris */
+    color: #333;
+}
+
+.craigslist-container {
+    width: 960px; /* Largeur fixe pour simuler le non-responsive */
+    margin: 0 auto; /* Centrage */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.header-legacy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.header-legacy h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #333;
+}
+
+.header-legacy h1 a,
+.header-legacy .post-link {
+    color: #0000ee; /* Liens bleus classiques */
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.post-link {
+    font-size: 1.2em;
+}
+
+.content-legacy {
+    display: flex; /* Utilisation de flex pour les colonnes principales */
+    gap: 30px;
+}
+
+.col-main, .col-side {
+    flex: 1; /* Permet aux colonnes de prendre de l'espace */
+}
+
+.section-block {
+    margin-bottom: 30px;
+}
+
+.section-block h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.section-block h2 a {
+    color: #0000ee;
+    text-decoration: none;
+}
+
+.section-block ul {
+    list-style: none; /* Supprime les puces */
+    padding: 0;
+}
+
+.section-block ul li {
+    margin-bottom: 5px;
+}
+
+.section-block ul li a {
+    color: #0000ee;
+    text-decoration: underline;
+}
+
+/* Styles pour list.html */
+.search-bar-legacy {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+.search-bar-legacy input {
+    padding: 5px;
+    border: 1px solid #aaa;
+}
+
+.search-bar-legacy button {
+    padding: 5px 10px;
+    background-color: #ddd;
+    border: 1px solid #aaa;
+    cursor: pointer;
+}
+
+.ads-list-legacy ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ads-list-legacy li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.ads-list-legacy .date {
+    color: #888;
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+.ads-list-legacy a {
+    color: #0000ee;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.ads-list-legacy .location {
+    color: #555;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+/* Styles pour detail.html */
+.ad-detail-legacy h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.ad-info {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.ad-images {
+    text-align: center; /* Centrer les images dans le style legacy */
+    margin: 20px 0;
+}
+
+.ad-images img {
+    max-width: 100%; /* Pour éviter le débordement initial */
+    height: auto;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
+.ad-description {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.ad-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #008000; /* Prix en vert */
+    margin-bottom: 20px;
+}
+
+.contact-buttons-legacy {
+    margin-bottom: 20px;
+}
+
+.btn-contact {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #0000ee;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* Styles pour le footer */
+.footer-legacy {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.footer-legacy a {
+    color: #0000ee;
+    text-decoration: underline;
+    margin: 0 5px;
+} 
