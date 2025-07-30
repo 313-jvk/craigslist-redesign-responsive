@@ -84,21 +84,55 @@ function performFilteringAndSorting() {
     });
 }
 
-// Initialisation au chargement de la page pour la page de liste
+// ... (code existant pour le menu hamburger, etc.) ...
+
+// ====================================
+// 3.1. Fonctionnalité de Recherche/Filtrage en Temps Réel (list.html)
+// ====================================
+
+// ... (code existant pour searchInput, filterSelect, adListContainer, extractPrice, performFilteringAndSorting) ...
+
+// ====================================
+// 3.2. "Voir Plus" / Pagination Dynamique (list.html)
+// ====================================
+
+// ... (code existant pour loadMoreBtn, adsPerPage, currentDisplayedAds, displayMoreAds, surcharge de performFilteringAndSorting) ...
+
+
+// Initialisation pour la pagination et le pré-filtrage au chargement de la page (si la page est list.html)
 document.addEventListener('DOMContentLoaded', () => {
-    // S'assurer que nous sommes bien sur la page list.html avant d'activer les écouteurs
     if (adListContainer) {
-        // Stocke une copie des éléments d'annonce originaux
-        allAdItems = Array.from(adListContainer.children); // Convertit la NodeList en Array
+        // Peupler allAdItems dès que le DOM est prêt
+        allAdItems = Array.from(adListContainer.children);
 
-        // Attache les écouteurs d'événements
-        searchInput.addEventListener('input', performFilteringAndSorting); // 'input' pour une recherche en temps réel
-        filterSelect.addEventListener('change', performFilteringAndSorting); // 'change' quand la sélection change
+        // NOUVEAU CODE POUR LA LECTURE DES PARAMÈTRES D'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchTermFromUrl = urlParams.get('q'); // Récupère la valeur du paramètre 'q'
 
-        // Pour s'assurer que le tri initial est appliqué si l'option par défaut n'est pas "Plus récent"
-        // performFilteringAndSorting(); // Peut être appelé ici si vous voulez un tri par défaut différent de l'ordre HTML
+        if (searchTermFromUrl) {
+            // Décode le terme (remplace %20 par des espaces, etc.)
+            const decodedSearchTerm = decodeURIComponent(searchTermFromUrl);
+            // Définit la valeur de l'input de recherche
+            searchInput.value = decodedSearchTerm;
+        }
+        // FIN DU NOUVEAU CODE
+
+
+        // Attache les écouteurs d'événements (ceci était déjà là)
+        searchInput.addEventListener('input', performFilteringAndSorting);
+        filterSelect.addEventListener('change', performFilteringAndSorting);
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', () => {
+                currentDisplayedAds += adsPerPage;
+                performFilteringAndSorting(); // Appelle la version surchargée
+            });
+        }
+
+        // Appelle la fonction de filtrage/tri/pagination au chargement initial de la page
+        // Ceci appliquera soit le filtre de l'URL, soit aucun filtre si le champ est vide.
+        window.performFilteringAndSorting(); // Appel initial pour appliquer filtres/pagination
     }
-});
+}); 
 
 // Note pour la navigation par catégorie depuis index.html:
 // Si vous voulez filtrer directement par catégorie depuis index.html, il faudrait
@@ -181,17 +215,55 @@ window.performFilteringAndSorting = function() {
 
 
 // Initialisation pour la pagination au chargement de la page (si la page est list.html)
+// ... (code existant pour le menu hamburger, etc.) ...
+
+// ====================================
+// 3.1. Fonctionnalité de Recherche/Filtrage en Temps Réel (list.html)
+// ====================================
+
+// ... (code existant pour searchInput, filterSelect, adListContainer, extractPrice, performFilteringAndSorting) ...
+
+// ====================================
+// 3.2. "Voir Plus" / Pagination Dynamique (list.html)
+// ====================================
+
+// ... (code existant pour loadMoreBtn, adsPerPage, currentDisplayedAds, displayMoreAds, surcharge de performFilteringAndSorting) ...
+
+
+// Initialisation pour la pagination et le pré-filtrage au chargement de la page (si la page est list.html)
 document.addEventListener('DOMContentLoaded', () => {
     if (adListContainer) {
-        // La ligne suivante doit être la première exécution après avoir peuplé allAdItems
-        // Donc, assurez-vous que `allAdItems` est peuplé AVANT cet appel.
-        // C'est déjà géré dans la section 3.1 `DOMContentLoaded`.
-        
-        // Initialise l'affichage avec seulement les premières annonces
-        // et ajuste la visibilité du bouton "Voir plus"
-        window.performFilteringAndSorting(); // Appelle la version surchargée
+        // Peupler allAdItems dès que le DOM est prêt
+        allAdItems = Array.from(adListContainer.children);
+
+        // NOUVEAU CODE POUR LA LECTURE DES PARAMÈTRES D'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchTermFromUrl = urlParams.get('q'); // Récupère la valeur du paramètre 'q'
+
+        if (searchTermFromUrl) {
+            // Décode le terme (remplace %20 par des espaces, etc.)
+            const decodedSearchTerm = decodeURIComponent(searchTermFromUrl);
+            // Définit la valeur de l'input de recherche
+            searchInput.value = decodedSearchTerm;
+        }
+        // FIN DU NOUVEAU CODE
+
+
+        // Attache les écouteurs d'événements (ceci était déjà là)
+        searchInput.addEventListener('input', performFilteringAndSorting);
+        filterSelect.addEventListener('change', performFilteringAndSorting);
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', () => {
+                currentDisplayedAds += adsPerPage;
+                performFilteringAndSorting(); // Appelle la version surchargée
+            });
+        }
+
+        // Appelle la fonction de filtrage/tri/pagination au chargement initial de la page
+        // Ceci appliquera soit le filtre de l'URL, soit aucun filtre si le champ est vide.
+        window.performFilteringAndSorting(); // Appel initial pour appliquer filtres/pagination
     }
-});
+}); 
 
 
 // Note importante : La logique de `performFilteringAndSorting` que nous avons écrite précédemment
