@@ -43,9 +43,9 @@ Le projet met l'accent sur les principes de **Mobile-First Design** et l'ajout d
 Découvrez la transformation ! Voici un aperçu avant/après de la refonte de l'interface utilisateur de Craigslist. Avant : 
 
 
-<img width="600" height="440" alt="depott" src="https://github.com/user-attachments/assets/bad2912f-12e6-4cd0-a67c-099ee4ccb704" /> <br> 
-___________________________________________________________________________________________________________________________________________________
-Apres : 
+<img width="600" height="440" alt="depott" src="https://github.com/user-attachments/assets/bad2912f-12e6-4cd0-a67c-099ee4ccb704" /> <br> <br> 
+___________________________________________________________________________________________________________________________________________________ <br> 
+
  <img width="600" height="440" alt="depot" src="https://github.com/user-attachments/assets/a0d41c3d-d12f-4488-a4a2-d202b30f88e0" /> <br> 
         
  <img width="600" height="440" alt="depottt" src="https://github.com/user-attachments/assets/b3d25212-9cbb-4f6c-8b43-3d718c4463b4" /> <br> 
